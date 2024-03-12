@@ -1,3 +1,5 @@
+run:
+	python scripts/run_app.py $(filter-out $@,$(MAKECMDGOALS))
 lint:
 	poetry run flake8 src
 format:
