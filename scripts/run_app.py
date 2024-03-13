@@ -1,6 +1,7 @@
 import subprocess
 import sys
 
+
 def run_command(target):
     command = f"poetry run streamlit run src/api/{target}.py"
     subprocess.run(command, shell=True)

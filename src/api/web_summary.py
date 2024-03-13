@@ -7,7 +7,8 @@ from langchain.callbacks import get_openai_callback
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import HumanMessage, SystemMessage
 
-from src.api.config import Config
+import __set_base_path__
+from src.config import Config
 
 
 def init_page():
