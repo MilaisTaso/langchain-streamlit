@@ -1,5 +1,6 @@
 from urllib.parse import urlparse
 
+import __set_base_path__
 import requests
 import streamlit as st
 from bs4 import BeautifulSoup
@@ -7,7 +8,6 @@ from langchain.callbacks import get_openai_callback
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import HumanMessage, SystemMessage
 
-import __set_base_path__
 from src.config import Config
 
 
@@ -33,7 +33,9 @@ def select_model():
     else:
         model_name = "gpt-4"
 
-    return ChatOpenAI(temperature=0, model_name=model_name, api_key=Config.OPENAI_API_KEY)
+    return ChatOpenAI(
+        temperature=0, model_name=model_name, api_key=Config.OPENAI_API_KEY
+    )
 
 
 def get_url_input():
